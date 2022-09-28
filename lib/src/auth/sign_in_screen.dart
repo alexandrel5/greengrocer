@@ -2,6 +2,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:greengrocer/src/auth/sign_up_screen.dart';
 import 'package:greengrocer/src/config/custom_colors.dart';
 
 import 'components/custom_text_field.dart';
@@ -164,7 +165,15 @@ class SignInScreen extends StatelessWidget {
                             color: Colors.green,
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (c) {
+                                return SignUpScreen();
+                              },
+                            ),
+                          );
+                        },
                         child: const Text(
                           "Criar conta",
                           style: TextStyle(fontSize: 18),
