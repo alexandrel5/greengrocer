@@ -24,7 +24,9 @@ class ItemTile extends StatelessWidget {
             Navigator.of(context).push(
               MaterialPageRoute(
                 builder: ((context) {
-                  return const ProductScreen();
+                  return ProductScreen(
+                    item: item,
+                  );
                 }),
               ),
             );
@@ -42,8 +44,9 @@ class ItemTile extends StatelessWidget {
                 children: [
                   //Imagem
                   Expanded(
-                    child: Image.asset(
-                      item.imgUrl,
+                    child: Hero(
+                      tag: item.imgUrl,
+                      child: Image.asset(item.imgUrl),
                     ),
                   ),
                   //Nome
